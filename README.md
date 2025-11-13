@@ -1,33 +1,33 @@
 # Simple Modbus CLI Tool
 
-Alat ringan untuk membaca/menulis holding register Modbus TCP lewat input terminal. Cocok untuk pengujian cepat tanpa dashboard Streamlit.
+Lightweight tool for reading/writing Modbus TCP holding registers via terminal input. Suitable for quick testing without a Streamlit dashboard.
 
-## Struktur Proyek
+## Project Structure
 ```
 simple_modbus_cli/
-├── main.py            # Script interaktif
-├── requirements.txt   # Dependensi (pymodbus)
-└── README.md          # Dokumentasi
+├── main.py            # Interactive script
+├── requirements.txt   # Dependencies (pymodbus)
+└── README.md          # Documentation
 ```
 
-## Cara Pakai
-1. (Opsional) Buat virtualenv baru.
-2. Install dependensi:
+## How to Use
+1. (Optional) Create a new virtualenv.
+2. Install dependencies:
    ```bash
    pip install -r requirements.txt
    ```
-3. Jalankan aplikasi:
+3. Run the application:
    ```bash
    python main.py
    ```
-4. Ikuti prompt:
-   - Masukkan IP perangkat (default `127.0.0.1`).
-   - Masukkan port (default `502`).
-   - Masukkan Slave ID (default `1`).
-   - Pilih aksi `r` (read) atau `w` (write), lalu isi alamat register & nilai.
-   - Ketik `q` untuk keluar dan menutup koneksi.
+4. Follow the prompts:
+   - Enter device IP (default `127.0.0.1`).
+   - Enter port (default `502`).
+   - Enter Slave ID (default `1`).
+   - Choose action `r` (read) or `w` (write), then enter register address & value.
+   - Type `q` to exit and close the connection.
 
-## Catatan
-- Script memakai `read_holding_registers` dan `write_register`, jadi pastikan perangkat mendukung holding register pada alamat yang Anda masukkan.
-- Timeout koneksi diset ke 3 detik; sesuaikan di `main.py` jika jaringan Anda lambat.
-- Jika terjadi error, pesan di terminal akan menunjukkan apakah masalah koneksi, penulisan, atau respon dari perangkat.
+## Notes
+- The script uses `read_holding_registers` and `write_register`, so make sure the device supports holding registers at the addresses you enter.
+- Connection timeout is set to 3 seconds; adjust in `main.py` if your network is slow.
+- If an error occurs, the terminal message will indicate whether it's a connection issue, write issue, or device response issue.

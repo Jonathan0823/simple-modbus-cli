@@ -21,10 +21,10 @@ class PromptService:
         raw = self._input(f"{message}{suffix}: ").strip()
         if not raw:
             if default is None:
-                raise ValueError("Input tidak boleh kosong")
+                raise ValueError("Input cannot be empty")
             raw = str(default)
         try:
             return cast(raw)
         except Exception as exc:  # pragma: no cover - interactive helper
-            print(f"⚠️  Nilai tidak valid ({exc}). Coba lagi.")
+            print(f"⚠️  Invalid value ({exc}). Try again.")
             return self.prompt(message, default, cast)
